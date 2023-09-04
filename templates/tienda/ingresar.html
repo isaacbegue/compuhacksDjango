@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 id="titulo" data-aos="flip-left"
+data-aos-easing="ease-out-cubic"
+data-aos-duration="2000">Ingresar</h1>
+
+{% if messages %}
+<div id="error-messages">
+    {% for message in messages %}
+        <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+    
+<section id="seccion-ingresar">
+    <form name="ingresar" action="{% url 'ingresar' %}" method="post" accept-charset="utf-8">
+        {% csrf_token %}
+        <ul>
+            <li><label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" placeholder="usuario" required></li>
+            <li><label for="password">Contraseña:</label>
+                <input type="password" name="password" placeholder="contraseña" required></li>
+            <li><input type="submit" value="Iniciar sesión"></li>
+        </ul>
+    </form>
+</section>
+
+{% endblock %}

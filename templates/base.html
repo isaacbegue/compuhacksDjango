@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head id="meta">
+        <meta charset="UTF-8">
+        <title>CompuHacks</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="icon" href="{% static 'img/isotipo.png' %}">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0T1BDP3QTR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0T1BDP3QTR');
+        </script>
+    </head>
+
+    <body>
+        <header id="header">
+            <div id="logo">
+                <a href="{% url 'index' %}">
+                    <img src="/static/img/isologo.png" alt="Logo de la página">
+                </a>
+            </div>
+            <nav id="barra-navegacion">
+                
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'perfil_usuario' %}">{{ user.username }}</a>
+                        </li>
+                        <li>
+                            |
+                        </li>
+                        <li>
+                            <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{% url 'ingresar' %}">Ingresar</a>
+                        </li>
+                        <li>
+                            |
+                        </li>
+                        <li>
+                            <a href="{% url 'registrarse' %}">Registrarse</a>
+                        </li>
+                    {% endif %}
+                    
+                    <li>
+                        <a href="{% url 'carrito_compras' %}"><img id="carrito" src="{% static 'img/carritocompras.svg' %}" alt="carrito-compras"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        {% block content %}{% endblock %}
+
+        <footer id="footer">
+            <div class="redes-sociales">
+                <span>Redes Sociales</span>
+                <div class="enlaces-redes-sociales">
+                    <a href="#">
+                        <img src="/static/img/facebook.png" alt="facebook">
+                    </a>
+                    <a href="#">
+                        <img src="/static/img/instagram.png" alt="instagram">
+                    </a>
+                    <a href="#">
+                        <img src="/static/img/youtube.png" alt="youtube">
+                    </a>
+                </div>    
+            </div>
+            
+            <p id="derechos-reservados">Derechos reservados © 2023 - CompuHacks</p>
+            
+            <div class="contacto">
+                <p>Contacto: 55 1234 4567</p>
+                <p>Correo electrónico: info@compuhacks.com</p>
+            </div>            
+        </footer>
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>
+

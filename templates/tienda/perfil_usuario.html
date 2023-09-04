@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 id="titulo">Perfil de {{user.username}}</h1>
+
+{% if user.is_authenticated %}
+    <div class="menu_perfil_usuario">
+
+        <ul>
+
+            {% if user.is_staff %}
+            <!-- Menú para staff -->
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'perfil_rh' %}">Perfil RH</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'reportes_internos' %}">Reportes Internos</a>
+            </li>
+            
+            {% else %}
+                <!-- Menú para usuarios regulares -->
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'pedidos' %}">Pedidos</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'configuracion_cuenta' %}">Configuración de la cuenta</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'metodos_pago' %}">Métodos de pago</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'lista_deseados' %}">Lista de deseados</a>
+            </li>
+    
+            {% endif %}
+        </ul>
+
+
+    </div>
+{% endif %}
+
+{% endblock %}

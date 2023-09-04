@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 id="titulo" data-aos="flip-left"
+data-aos-easing="ease-out-cubic"
+data-aos-duration="2000">Registrarse</h1>
+    
+<section id="seccion-registrarse">
+    <form action="dashboard/dashboard-index.html" name="ingresar" method="post">
+        <div class="container">
+          <p>Por favor complete este formulario para crear una cuenta.</p>
+          
+          <ul>
+            <li>
+                <label for="email">Correo electrónico</label>
+                <input type="text" placeholder="Ingrese Correo electrónico" name="email" id="email" required>
+            </li>
+            <li>
+                <label for="psw">Contraseña</label>
+                <input type="password" placeholder="Ingrese Contraseña" name="psw" id="psw" required>
+            </li>
+            <li>
+                <label for="psw-repeat">Repetir Contraseña</label>
+                <input type="password" placeholder="Repita Contraseña" name="psw-repeat" id="psw-repeat" required>
+            </li>
+            <li>
+                <input type="submit" value="Registrarse"/>
+            </li>
+          </ul>
+
+        </div>
+      </form>
+</section>
+
+{% endblock %}
