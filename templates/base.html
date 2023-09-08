@@ -30,7 +30,7 @@
                 <ul>
                     {% if user.is_authenticated %}
                         <li>
-                            <a href="{% url 'perfil_usuario' %}">{{ user.username }}</a>
+                            <a href="{% url 'perfil_usuario' %}">{{ user.first_name }} {{user.last_name}}</a>
                         </li>
                         <li>
                             |

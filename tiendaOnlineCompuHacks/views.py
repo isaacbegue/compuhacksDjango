@@ -47,8 +47,51 @@ def registrarse(request):
 def provisional(request, nombreprovisional="Página provisional"):
     return render(request, 'tienda/provisional.html',{'nombreprovisional' : nombreprovisional})
 
+
+# Perfil de usuario desglose
+
 def perfil_usuario(request):
     return render(request, 'tienda/perfil_usuario.html')
 
+def perfil_rh(request):
+    return render(request, 'tienda/perfil_usuario/perfil_rh.html')
+
 def reportes_internos(request):
     return render(request, 'tienda/dashboard/dashboard/index.html')
+
+def contabilidad(request):
+    return render(request, 'tienda/perfil_usuario/contabilidad.html')
+
+def almacen(request):
+    return render(request, 'tienda/perfil_usuario/almacen.html')
+
+def recursos_humanos(request):
+    return render(request, 'tienda/perfil_usuario/recursos_humanos.html')
+
+def mercadotecnia(request):
+    return render(request, 'tienda/perfil_usuario/mercadotecnia.html')
+
+def pedidos(request):
+    return render(request, 'tienda/perfil_usuario/pedidos.html')
+
+def configuracion_cuenta(request):
+    return render(request, 'tienda/perfil_usuario/configuracion_cuenta.html')
+
+def metodos_pago(request):
+    return render(request, 'tienda/perfil_usuario/metodos_pago.html')
+
+def lista_deseados(request):
+    return render(request, 'tienda/perfil_usuario/lista_deseados.html')
+
+def balance_cuentas(request):
+    return render(request, 'tienda/perfil_usuario/contabilidad/balance_cuentas.html')
+
+def kpis_contabilidad(request):
+    return render(request, 'tienda/perfil_usuario/contabilidad/kpis_contables.html')
+
+def envios_pendientes(request):
+    return render(request, 'tienda/perfil_usuario/almacen/envios_pendientes.html')
+
+def kpis_almacen(request):
+    return render(request, 'tienda/perfil_usuario/almacen/kpis_almacen.html')
+

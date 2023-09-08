@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 id="titulo">Contabilidad</h1>
+
+{% if user.is_authenticated %}
+    <div class="menu_perfil_usuario">
+
+        <ul>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'perfil_rh' %}">Perfil RH</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'contabilidad/balance_cuentas' %}">Balance de cuentas</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'contabilidad/kpis_contabilidad' %}">KPIs contables</a>
+            </li>
+               
+        </ul>
+
+
+    </div>
+{% endif %}
+
+{% endblock %}

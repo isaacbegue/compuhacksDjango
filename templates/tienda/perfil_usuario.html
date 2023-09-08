@@ -10,13 +10,40 @@
         <ul>
 
             {% if user.is_staff %}
-            <!-- Menú para staff -->
-            <li>
-                <a class="boton_perfil_usuario" href="{% url 'perfil_rh' %}">Perfil RH</a>
-            </li>
-            <li>
-                <a class="boton_perfil_usuario" href="{% url 'reportes_internos' %}">Reportes Internos</a>
-            </li>
+                <!-- Menú para superusuario -->
+                <li>
+                    <a class="boton_perfil_usuario" href="{% url 'perfil_rh' %}">Perfil RH</a>
+                </li>
+                
+                {%if user.is_superuser%}
+                    <li>
+                        <a class="boton_perfil_usuario" href="{% url 'contabilidad' %}">Contabilidad</a>
+                    </li>
+                    <li>
+                        <a class="boton_perfil_usuario" href="{% url 'almacen' %}">Almacén</a>
+                    </li>
+                    <li>
+                        <a class="boton_perfil_usuario" href="{% url 'recursos_humanos' %}">Recursos Humanos</a>
+                    </li>
+                    <li>
+                        <a class="boton_perfil_usuario" href="{% url 'mercadotecnia' %}">Mercadotecnia</a>
+                    </li>
+                    <li>
+                        <a class="boton_perfil_usuario" href="{% url 'reportes_internos' %}">Reportes internos</a>
+                    </li>
+                {% elif user.empleado.area_trabajo == "Contabilidad" %}
+                    <script>
+                        window.location.href="{% url 'almacen' %}"
+                    </script>
+
+                {% else %}
+                    <script>
+                        window.location.href="{% url 'contabilidad' %}"
+                    </script>
+
+                {% endif %}
+
+
             
             {% else %}
                 <!-- Menú para usuarios regulares -->

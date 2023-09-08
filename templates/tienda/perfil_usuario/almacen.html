@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 id="titulo">Almacén</h1>
+
+{% if user.is_authenticated %}
+    <div class="menu_perfil_usuario">
+
+        <ul>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'perfil_rh' %}">Perfil RH</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'almacen/envios_pendientes' %}">Envíos pendientes</a>
+            </li>
+            <li>
+                <a class="boton_perfil_usuario" href="{% url 'almacen/kpis_almacen' %}">KPIs almacén</a>
+            </li>
+               
+        </ul>
+
+
+    </div>
+{% endif %}
+
+{% endblock %}

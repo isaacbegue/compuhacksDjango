@@ -200,23 +200,23 @@ for user_data in usuarios:
 empleados = [
     {
         'empleado_id': 1,
-        'puesto': 'Gerente',
-        'area_trabajo': 'Administración',
+        'puesto': 'CEO',
+        'area_trabajo': 'Dirección General',
         'permisos_acceso': 'Todos',
         'direccion_id': 1,
     },
     {
         'empleado_id': 2,
-        'puesto': 'Subgerente',
-        'area_trabajo': 'Administración',
-        'permisos_acceso': 'Todos',
+        'puesto': 'Contador',
+        'area_trabajo': 'Contabilidad',
+        'permisos_acceso': 'Contabilidad',
         'direccion_id': 2,
     },
     {
         'empleado_id': 3,
-        'puesto': 'Vendedor',
-        'area_trabajo': 'Ventas',
-        'permisos_acceso': 'Ventas',
+        'puesto': 'Jefe de almacén',
+        'area_trabajo': 'Almacén',
+        'permisos_acceso': 'Almacén',
         'direccion_id': 3,
     },
 ]
